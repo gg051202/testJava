@@ -1,4 +1,4 @@
-package dimen;
+package main.java.dimen;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

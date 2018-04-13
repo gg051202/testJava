@@ -1,6 +1,6 @@
-package dimen;
+package main.java.dimen;
 
-public class UpdateDimen_androidDevelopFrame {
+public class UpdateDimen_Weishanpai {
 
     /**
      * System.out.println("......"+getResources().getConfiguration().smallestScreenWidthDp)
@@ -8,9 +8,7 @@ public class UpdateDimen_androidDevelopFrame {
      */
     public static final int[] DIMENS = new int[]{320, 360, 411, 480, 720, 800, 820};
     public static final String DIRECTORY = "/Users/guilinlin/Documents/DevelopFiles/AndroidStudioProjects/" +
-            "AndroidDevelopDimen/dimen/src/main/res";
-
-
+            "WeishanpaiAndroid/app/src/main/res";
     /**
      * 默认的尺寸
      */
@@ -19,5 +17,6 @@ public class UpdateDimen_androidDevelopFrame {
     public static void main(String[] args) {
         UpdateDimen.make(DIRECTORY, BASE, DIMENS);
     }
+
 
 }

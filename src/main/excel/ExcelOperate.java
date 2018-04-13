@@ -1,4 +1,4 @@
-package excel;
+package main.java.excel;
 
 
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -61,7 +61,7 @@ public class ExcelOperate {
 
         try {
             // 读取Excel文件
-            InputStream inputStream = new FileInputStream("/Users/guilinlin/Desktop/cp_config.xls");
+            InputStream inputStream = new FileInputStream("/Users/guilinlin/Documents/乱七八糟文件都丢这儿/彩票渠道配置.xls");
             workbook = new HSSFWorkbook(inputStream);
             inputStream.close();
         } catch (Exception e) {

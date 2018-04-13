@@ -1,4 +1,4 @@
-package socket;
+package main.java.socket;
 
 import org.apache.mina.core.service.IoAcceptor;
 import org.apache.mina.core.service.IoHandlerAdapter;

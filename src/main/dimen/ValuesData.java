@@ -1,4 +1,4 @@
-package dimen;
+package main.java.dimen;
 
 public class ValuesData {
     public String dirName;

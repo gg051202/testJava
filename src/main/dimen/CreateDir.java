@@ -1,4 +1,4 @@
-package dimen;
+package main.java.dimen;
 
 import java.io.File;
 import java.io.IOException;

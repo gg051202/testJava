@@ -1,4 +1,4 @@
-package createWx;
+package main.java.createWx;
 
 /**
  * Created by guilinlin on 16/9/29 09:53.

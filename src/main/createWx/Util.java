@@ -1,4 +1,4 @@
-package createWx;
+package main.java.createWx;
 
 import java.io.File;
 import java.io.IOException;
