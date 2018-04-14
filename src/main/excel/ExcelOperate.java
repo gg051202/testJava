@@ -1,4 +1,4 @@
-package main.java.excel;
+package main.excel;
 
 
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -23,24 +23,26 @@ public class ExcelOperate {
                     "                resValue(\"string\", \"app_name\", \"%s\")\n" +
                     "                buildConfigField \"String\", \"CHANEL\", '\"%s\"'\n" +
                     "                buildConfigField \"String\", \"CHANEL_KEY\", '\"%s\"'\n" +
-                    "                buildConfigField \"String\", \"WECHAT_PAY_APP_ID\", '\"wx7112469402696d76\"'\n" +
-                    "                manifestPlaceholders = [\"APP_LOGO\"   : \"@mipmap/logo_shishicai\",\n" +
+                    "                buildConfigField \"Integer\", \"SERVER_TYPE\", '%s'\n" +
+                    "                manifestPlaceholders = [\"APP_LOGO\"   : \"@mipmap/%s\",\n" +
                     "                        UMENG_APPKEY : \"%s\",\n" +
                     "                        UMENG_CHANNEL: \"%s\",\n" +
-                    "                        JPUSH_APPKEY : \"%s\",\n" +
-                    "                        JPUSH_CHANNEL: \"%s\"]\n" +
+                    "                        ALI_PUSH_APPKEY : \"%s\",\n" +
+                    "                        ALI_PUSH_SECRET: \"%s\"]\n" +
                     "            }";
             sb.append(String.format(src,
-                    data.getChannel(),
+                    data.getChannelName(),
                     data.getPackageName(),
                     data.getAppName(),
                     data.getChannel(),
                     data.getChannelKey(),
+                    data.getServerType(),
+                    data.getLogo(),
                     data.getUmengKey(),
                     data.getUmengChannelName(),
-                    data.getJpushKey(),
-                    data.getJpushChannelName()))
-                    .append("\n");
+                    data.getAliPushKey(),
+                    data.getAliPushSecret()))
+                    .append("\n\n");
 
         }
 
@@ -61,7 +63,7 @@ public class ExcelOperate {
 
         try {
             // 读取Excel文件
-            InputStream inputStream = new FileInputStream("/Users/guilinlin/Documents/乱七八糟文件都丢这儿/彩票渠道配置.xls");
+            InputStream inputStream = new FileInputStream("/Users/guilinlin/Documents/DevelopFiles/AndroidStudioProjects/MyApplication33/彩票渠道配置.xls");
             workbook = new HSSFWorkbook(inputStream);
             inputStream.close();
         } catch (Exception e) {
@@ -88,11 +90,12 @@ public class ExcelOperate {
                     GradleData.setAppName(hssfRow.getCell(1).getStringCellValue());
                     GradleData.setPackageName(hssfRow.getCell(2).getStringCellValue());
                     GradleData.setChannelKey(hssfRow.getCell(3).getStringCellValue());
-                    GradleData.setJpushKey(hssfRow.getCell(4).getStringCellValue());
-                    GradleData.setJpushMaster(hssfRow.getCell(5).getStringCellValue());
+                    GradleData.setAliPushKey(hssfRow.getCell(4).getStringCellValue());
+                    GradleData.setAliPushSecret(hssfRow.getCell(5).getStringCellValue());
                     GradleData.setUmengKey(hssfRow.getCell(6).getStringCellValue());
                     GradleData.setUmengChannelName(hssfRow.getCell(7).getStringCellValue());
-                    GradleData.setJpushChannelName(hssfRow.getCell(8).getStringCellValue());
+                    GradleData.setServerType(hssfRow.getCell(8).getStringCellValue().replaceAll("号", ""));
+                    GradleData.setLogo(hssfRow.getCell(9).getStringCellValue().replaceAll("号", ""));
                     list.add(GradleData);
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -1,4 +1,4 @@
-package main.java.dimen;
+package main.dimen;
 
 public class UpdateDimen_androidDevelopFrame {
 

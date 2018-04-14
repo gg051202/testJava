@@ -1,4 +1,4 @@
-package main.java.excel;
+package main.excel;
 
 /**
  * Created by guilinlin on 2017/11/23 13:51.
@@ -10,11 +10,44 @@ class GradleData {
     private String appName;
     private String packageName;
     private String channelKey;
-    private String jpushKey;
-    private String jpushMaster;
+    private String aliPushKey;
+    private String aliPushSecret;
     private String umengKey;
     private String umengChannelName;
-    private String jpushChannelName;
+    private String serverType;
+    private String logo;
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+
+    public String getAliPushKey() {
+        return aliPushKey;
+    }
+
+    public void setAliPushKey(String aliPushKey) {
+        this.aliPushKey = aliPushKey;
+    }
+
+    public String getAliPushSecret() {
+        return aliPushSecret;
+    }
+
+    public void setAliPushSecret(String aliPushSecret) {
+        this.aliPushSecret = aliPushSecret;
+    }
+
+    public String getServerType() {
+        return serverType;
+    }
+
+    public void setServerType(String serverType) {
+        this.serverType = serverType;
+    }
 
     public String getAppName() {
         return appName;
@@ -40,21 +73,6 @@ class GradleData {
         this.channelKey = channelKey;
     }
 
-    public String getJpushKey() {
-        return jpushKey;
-    }
-
-    public void setJpushKey(String jpushKey) {
-        this.jpushKey = jpushKey;
-    }
-
-    public String getJpushMaster() {
-        return jpushMaster;
-    }
-
-    public void setJpushMaster(String jpushMaster) {
-        this.jpushMaster = jpushMaster;
-    }
 
     public String getUmengKey() {
         return umengKey;
@@ -72,17 +90,18 @@ class GradleData {
         this.umengChannelName = umengChannelName;
     }
 
-    public String getJpushChannelName() {
-        return jpushChannelName;
-    }
-
-    public void setJpushChannelName(String jpushChannelName) {
-        this.jpushChannelName = jpushChannelName;
-    }
 
     public String getChannel() {
         return channel;
     }
+
+    public String getChannelName() {
+        if (channel.equals("sdkj")) {
+            return "_______test_______";
+        }
+        return channel;
+    }
+
 
     public void setChannel(String channel) {
         this.channel = channel;
@@ -95,11 +114,11 @@ class GradleData {
                 ", appName='" + appName + '\'' +
                 ", packageName='" + packageName + '\'' +
                 ", channelKey='" + channelKey + '\'' +
-                ", jpushKey='" + jpushKey + '\'' +
-                ", jpushMaster='" + jpushMaster + '\'' +
+                ", aliPushKey='" + aliPushKey + '\'' +
+                ", aliPushSecret='" + aliPushSecret + '\'' +
                 ", umengKey='" + umengKey + '\'' +
                 ", umengChannelName='" + umengChannelName + '\'' +
-                ", jpushChannelName='" + jpushChannelName + '\'' +
+                ", serverType='" + serverType + '\'' +
                 '}';
     }
 }
