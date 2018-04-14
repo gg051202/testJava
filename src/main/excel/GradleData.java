@@ -16,6 +16,15 @@ class GradleData {
     private String umengChannelName;
     private String serverType;
     private String logo;
+    private String signType;
+
+    public String getSignType() {
+        return signType;
+    }
+
+    public void setSignType(String signType) {
+        this.signType = signType;
+    }
 
     public String getLogo() {
         return logo;
