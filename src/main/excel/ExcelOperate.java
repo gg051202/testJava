@@ -130,19 +130,19 @@ public class ExcelOperate {
                 // 将单元格中的内容存入集合
                 GradleData GradleData = new GradleData();
                 try {
-                    GradleData.setChannel(hssfRow.getCell(0).getStringCellValue());
-                    GradleData.setAppName(hssfRow.getCell(1).getStringCellValue());
-                    GradleData.setPackageName(hssfRow.getCell(2).getStringCellValue());
-                    GradleData.setChannelKey(hssfRow.getCell(3).getStringCellValue());
+                    GradleData.setChannel(hssfRow.getCell(0).getStringCellValue().trim());
+                    GradleData.setAppName(hssfRow.getCell(1).getStringCellValue().trim());
+                    GradleData.setPackageName(hssfRow.getCell(2).getStringCellValue().trim());
+                    GradleData.setChannelKey(hssfRow.getCell(3).getStringCellValue().trim());
                     hssfRow.getCell(4).setCellType(Cell.CELL_TYPE_STRING);
-                    GradleData.setAliPushKey(hssfRow.getCell(4).getStringCellValue());
+                    GradleData.setAliPushKey(hssfRow.getCell(4).getStringCellValue().trim());
                     hssfRow.getCell(5).setCellType(Cell.CELL_TYPE_STRING);
-                    GradleData.setAliPushSecret(hssfRow.getCell(5).getStringCellValue());
-                    GradleData.setUmengKey(hssfRow.getCell(6).getStringCellValue());
-                    GradleData.setUmengChannelName(hssfRow.getCell(7).getStringCellValue());
-                    GradleData.setServerType(hssfRow.getCell(8).getStringCellValue().replaceAll("号", ""));
-                    GradleData.setLogo(hssfRow.getCell(9).getStringCellValue().replaceAll("号", ""));
-                    GradleData.setSignType(hssfRow.getCell(10).getStringCellValue());
+                    GradleData.setAliPushSecret(hssfRow.getCell(5).getStringCellValue().trim());
+                    GradleData.setUmengKey(hssfRow.getCell(6).getStringCellValue().trim());
+                    GradleData.setUmengChannelName(hssfRow.getCell(7).getStringCellValue().trim());
+                    GradleData.setServerType(hssfRow.getCell(8).getStringCellValue().replaceAll("号", "").trim());
+                    GradleData.setLogo(hssfRow.getCell(9).getStringCellValue().replaceAll("号", "").trim());
+                    GradleData.setSignType(hssfRow.getCell(10).getStringCellValue().trim());
                     list.add(GradleData);
                 } catch (Exception e) {
                     e.printStackTrace();

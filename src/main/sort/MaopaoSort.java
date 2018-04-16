@@ -332,6 +332,9 @@ public class MaopaoSort {
     @Test
     public void _20RadixSort() {
 
+        String a = "  asd  ";
+        System.out.println(a.trim());
+
         int[] list = Util.getList();
         long current = System.currentTimeMillis();
 
